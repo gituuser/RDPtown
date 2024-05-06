@@ -61,25 +61,35 @@ To use Gmail Cloud Computer, you need to follow these steps:
    ```bash
     sudo apt update -y && sudo apt upgrade -y
     sudo apt install wget -y
-   ```
-2.Download and install Chrome Remote Desktop 
-
-   ```bash
-    sudo wget https://dl.google.com/linux/direct/chrome-remote-desktop_current_amd64.deb
-    sudo apt install ./chrome-remote-desktop_current_amd64.deb -y 
+  
    ```
 3. installing XFCE Desktop Environment
    ```bash
    sudo DEBIAN_FRONTEND=noninteractive \
     apt install --assume-yes xfce4 desktop-base dbus-x11 xscreensaver
    ```  
-4. Activating Chrome Remote Desktop
+ 4.
+   ```bash
+     sudo apt install ubuntu-desktop
+   ```
+5.
+   ```bash
+     sudo apt install screen
+   ```
+6 .Download and install Chrome Remote Desktop 
+
+   ```bash
+    sudo wget https://dl.google.com/linux/direct/chrome-remote-desktop_current_amd64.deb
+    sudo apt install ./chrome-remote-desktop_current_amd64.deb -y 
+   ```
+
+7V. Activating Chrome Remote Desktop
    ```bash
     sudo bash -c 'echo "exec /etc/X11/Xsession /usr/bin/xfce4-session" > /etc/chrome-remote-desktop-session'
    ```
-5.  Disabling lightdm.service
+8.  Disabling lightdm.service
    ```bash  
-    sudo systemctl disable lightdm.service
+    sudo sservice lightdm stop
    ```
 ## Step FOUR
    - Download Chrome Remote Desktop app/Extension or Go to <a href="https://remotedesktop.google.com">Chrome Remote Desktop</a> 
